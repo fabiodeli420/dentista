@@ -1,10 +1,15 @@
-// =========================================
-//   DENTISTA – JavaScript
-// =========================================
+// DENTAL STUDIO — JS
 
-// Navbar scroll
+// Loader
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1800);
+});
+
+// Navbar
 window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
   updateActiveLink();
 });
 
@@ -24,13 +29,17 @@ document.querySelectorAll('.nav-mobile .nav-link').forEach(l => {
   l.addEventListener('click', () => document.getElementById('navMobile').classList.remove('open'));
 });
 
-// Reveal on scroll
+// Reveal
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Formulario turno → WhatsApp
+// Formulario
 function sendTurno() {
   const nombre   = document.getElementById('tNombre').value.trim();
   const telefono = document.getElementById('tTelefono').value.trim();
@@ -38,40 +47,34 @@ function sendTurno() {
   const obra     = document.getElementById('tObra').value;
   const mensaje  = document.getElementById('tMensaje').value.trim();
 
-  if (!nombre || !telefono) {
-    showToast('⚠️ Completá nombre y teléfono');
-    return;
-  }
+  if (!nombre || !telefono) { showToast('Completá nombre y teléfono'); return; }
 
-  let msg = `🦷 *Solicitud de turno*\n\n`;
+  let msg = `🦷 *Solicitud de turno — Dental Studio*\n\n`;
   msg += `👤 Nombre: ${nombre}\n`;
   msg += `📞 Teléfono: ${telefono}\n`;
-  if (servicio) msg += `🔬 Servicio: ${servicio}\n`;
+  if (servicio) msg += `✦ Tratamiento: ${servicio}\n`;
   if (obra)     msg += `💳 Obra social: ${obra}\n`;
-  if (mensaje)  msg += `📝 Mensaje: ${mensaje}\n`;
+  if (mensaje)  msg += `📝 Consulta: ${mensaje}\n`;
 
-  // Reemplazá [NUMERO] con el número real del dentista
-  const waNumber = '[NUMERO]';
+  const waNumber = '[NUMERO]'; // Reemplazá con el número real
   window.open('https://wa.me/' + waNumber + '?text=' + encodeURIComponent(msg), '_blank');
-  showToast('✓ Redirigiendo a WhatsApp...');
+  showToast('Redirigiendo a WhatsApp...');
 }
 
-// Toast
 function showToast(msg) {
   const t = document.createElement('div');
   t.textContent = msg;
   t.style.cssText = `
     position:fixed; bottom:5rem; left:50%; transform:translateX(-50%);
-    background:#1b3a5c; color:white; padding:0.7rem 1.5rem;
-    border-radius:8px; font-family:'DM Sans',sans-serif;
-    font-size:0.85rem; z-index:9999;
-    box-shadow:0 8px 25px rgba(27,58,92,0.3);
+    background:#0a0a0a; color:#f5f0e8; padding:0.8rem 2rem;
+    font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:2px;
+    z-index:9999; border:1px solid rgba(201,168,76,0.3);
     animation:toastIn 0.3s ease;
   `;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2500);
 }
 
-const style = document.createElement('style');
-style.textContent = `@keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(10px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }`;
-document.head.appendChild(style);
+const s = document.createElement('style');
+s.textContent = `@keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(10px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }`;
+document.head.appendChild(s);
