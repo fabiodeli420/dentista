@@ -1,0 +1,10 @@
+📁 CARPETA DE IMÁGENES
+
+Poné acá las siguientes fotos:
+
+- hero-bg.jpg  → Foto del consultorio (fondo del hero)
+- doctor.jpg   → Foto del profesional
+
+Tamaño recomendado:
+- hero-bg.jpg: 1920x1080px
+- doctor.jpg: 600x700px
