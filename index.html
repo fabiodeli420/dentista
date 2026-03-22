@@ -3,129 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. [NOMBRE] — Odontología Estética</title>
+  <title>DENTAL STUDIO · Dra. [Apellido]</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@200;300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-text">DENTAL STUDIO</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="#inicio" class="nav-logo">
-        <span class="logo-cross">✦</span>
-        <span class="logo-text">Dra. <span>[APELLIDO]</span></span>
+        DENTAL<span>STUDIO</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#turno" class="nav-link">Turno</a></li>
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
+        <li><a href="#servicios" class="nav-link">Tratamientos</a></li>
+        <li><a href="#turno" class="nav-link">Reservar</a></li>
         <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
       </ul>
-      <a href="#turno" class="btn btn-primary nav-cta">Pedir turno</a>
+      <a href="#turno" class="btn-nav">Reservar turno</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
     <div class="nav-mobile" id="navMobile">
       <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#nosotros" class="nav-link">Nosotros</a>
-      <a href="#servicios" class="nav-link">Servicios</a>
-      <a href="#turno" class="nav-link">Turno</a>
+      <a href="#filosofia" class="nav-link">Filosofía</a>
+      <a href="#servicios" class="nav-link">Tratamientos</a>
+      <a href="#turno" class="nav-link">Reservar</a>
       <a href="#ubicacion" class="nav-link">Ubicación</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <!-- Reemplazá hero-bg.jpg en la carpeta img/ con una foto real del consultorio -->
-      <img src="img/hero-bg.jpg" alt="Consultorio" class="hero-img" onerror="this.style.display='none'" />
+    <div class="hero-media">
+      <img src="img/hero.jpg" alt="Dental Studio" class="hero-img" onerror="this.style.display='none'" />
       <div class="hero-overlay"></div>
     </div>
-    <div class="hero-inner">
-      <div class="hero-content reveal">
-        <div class="hero-badge">✦ Odontología Estética & General</div>
-        <h1 class="hero-title">
-          Tu sonrisa,<br>
-          <em>nuestra pasión</em>
-        </h1>
-        <p class="hero-sub">Tratamientos odontológicos de alta calidad en un ambiente cálido y profesional. Porque cada sonrisa merece lo mejor.</p>
-        <div class="hero-btns">
-          <a href="#turno" class="btn btn-primary">Pedir turno online</a>
-          <a href="#servicios" class="btn btn-outline">Ver servicios</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-n">+500</span>
-            <span class="stat-l">Pacientes</span>
+    <div class="hero-content">
+      <div class="hero-left reveal">
+        <div class="hero-eyebrow">Odontología de Excelencia</div>
+        <h1 class="hero-title">La sonrisa<br>que <em>mereces</em></h1>
+        <p class="hero-desc">Tratamientos estéticos y restaurativos de primer nivel, en un ambiente de lujo diseñado para tu bienestar.</p>
+        <a href="#turno" class="btn-hero">Reservar consulta</a>
+      </div>
+      <div class="hero-right reveal">
+        <div class="hero-pill">
+          <div class="pill-top">
+            <span class="pill-icon">✦</span>
+            <span class="pill-label">DENTAL STUDIO</span>
           </div>
-          <div class="stat">
-            <span class="stat-n">10+</span>
-            <span class="stat-l">Años de experiencia</span>
+          <div class="pill-stat">
+            <div class="ps"><span class="ps-n">+800</span><span class="ps-l">Pacientes</span></div>
+            <div class="ps-div"></div>
+            <div class="ps"><span class="ps-n">15+</span><span class="ps-l">Años</span></div>
+            <div class="ps-div"></div>
+            <div class="ps"><span class="ps-n">100%</span><span class="ps-l">Satisfacción</span></div>
           </div>
-          <div class="stat">
-            <span class="stat-n">100%</span>
-            <span class="stat-l">Atención personalizada</span>
+          <div class="pill-bottom">
+            <span>Dra. [Nombre Apellido]</span>
+            <span>M.N. [Número]</span>
           </div>
         </div>
       </div>
-      <div class="hero-card reveal">
-        <div class="hero-card-inner">
-          <div class="hero-icon">🦷</div>
-          <h3>Consultorio Odontológico</h3>
-          <p>Dra. [Nombre Apellido]<br>M.N. [Número]</p>
-          <div class="hero-horarios">
-            <div class="horario-item">
-              <span>Lun — Vie</span>
-              <span>9:00 — 19:00</span>
-            </div>
-            <div class="horario-item">
-              <span>Sábados</span>
-              <span>9:00 — 13:00</span>
-            </div>
-          </div>
-          <a href="#turno" class="btn btn-primary w100">Pedir turno →</a>
-        </div>
-      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
     </div>
   </section>
 
-  <!-- NOSOTROS -->
-  <section class="section" id="nosotros">
-    <div class="nosotros-wrap">
-      <div class="nosotros-img reveal">
-        <!-- Reemplazá doctor.jpg en img/ con foto del profesional -->
-        <img src="img/doctor.jpg" alt="Dra. [Nombre]" onerror="this.innerHTML='<div class=img-placeholder>👩‍⚕️</div>'" />
-        <div class="nosotros-badge">
-          <span class="badge-num">10+</span>
-          <span class="badge-txt">Años de<br>experiencia</span>
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>ESTÉTICA DENTAL</span><span class="mdot">◆</span>
+      <span>BLANQUEAMIENTO</span><span class="mdot">◆</span>
+      <span>IMPLANTES</span><span class="mdot">◆</span>
+      <span>ORTODONCIA</span><span class="mdot">◆</span>
+      <span>DISEÑO DE SONRISA</span><span class="mdot">◆</span>
+      <span>CARILLAS</span><span class="mdot">◆</span>
+      <span>ESTÉTICA DENTAL</span><span class="mdot">◆</span>
+      <span>BLANQUEAMIENTO</span><span class="mdot">◆</span>
+      <span>IMPLANTES</span><span class="mdot">◆</span>
+      <span>ORTODONCIA</span><span class="mdot">◆</span>
+      <span>DISEÑO DE SONRISA</span><span class="mdot">◆</span>
+      <span>CARILLAS</span><span class="mdot">◆</span>
+    </div>
+  </div>
+
+  <!-- FILOSOFÍA -->
+  <section class="filosofia" id="filosofia">
+    <div class="filosofia-inner">
+      <div class="filosofia-img reveal">
+        <img src="img/doctor.jpg" alt="Dra. [Nombre]" onerror="this.style.display='none'" />
+        <div class="filosofia-tag">
+          <span>15+</span>
+          años de experiencia
         </div>
       </div>
-      <div class="nosotros-content reveal">
-        <span class="section-tag">✦ QUIÉNES SOMOS</span>
-        <h2>Cuidamos tu salud<br><em>bucal con dedicación</em></h2>
-        <p>Somos un consultorio odontológico comprometido con la salud y estética dental de nuestros pacientes. Utilizamos tecnología de última generación y los mejores materiales para garantizar resultados duraderos.</p>
-        <p>Nuestro equipo trabaja con calidez y profesionalismo para que cada visita sea una experiencia tranquila y confortable.</p>
-        <div class="nosotros-items">
-          <div class="nosotros-item">
-            <span>🏥</span>
+      <div class="filosofia-content reveal">
+        <span class="eyebrow">NUESTRA FILOSOFÍA</span>
+        <h2>Donde la <em>ciencia</em><br>se encuentra con<br>el <em>arte</em></h2>
+        <div class="filosofia-sep"></div>
+        <p>Creemos que cada sonrisa cuenta una historia única. Nuestro enfoque combina la precisión científica con la sensibilidad estética para crear resultados que van más allá de lo esperado.</p>
+        <p>En nuestro consultorio, cada detalle fue diseñado para que te sientas en un ambiente exclusivo, relajante y de máximo confort.</p>
+        <div class="filosofia-items">
+          <div class="fi">
+            <div class="fi-icon">◈</div>
             <div>
-              <strong>Equipamiento moderno</strong>
-              <p>Tecnología de última generación</p>
+              <strong>Tecnología de punta</strong>
+              <p>Equipamiento de última generación importado</p>
             </div>
           </div>
-          <div class="nosotros-item">
-            <span>😊</span>
+          <div class="fi">
+            <div class="fi-icon">◈</div>
             <div>
-              <strong>Trato personalizado</strong>
-              <p>Cada paciente es único para nosotros</p>
+              <strong>Materiales premium</strong>
+              <p>Solo los mejores materiales del mercado</p>
             </div>
           </div>
-          <div class="nosotros-item">
-            <span>💳</span>
+          <div class="fi">
+            <div class="fi-icon">◈</div>
             <div>
-              <strong>Todas las obras sociales</strong>
-              <p>OSDE, Swiss Medical, IOMA y más</p>
+              <strong>Sin dolor</strong>
+              <p>Anestesia de última generación y sedación</p>
             </div>
           </div>
         </div>
@@ -134,104 +141,110 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section class="section section-servicios" id="servicios">
-    <div class="section-header reveal">
-      <span class="section-tag">✦ LO QUE HACEMOS</span>
-      <h2>Nuestros <em>servicios</em></h2>
-      <p>Tratamientos completos para toda la familia</p>
+  <section class="servicios" id="servicios">
+    <div class="servicios-header reveal">
+      <span class="eyebrow light">TRATAMIENTOS</span>
+      <h2 class="light">Nuestros <em>servicios</em><br>de excelencia</h2>
     </div>
     <div class="servicios-grid">
-      <div class="servicio-card reveal">
+      <div class="servicio reveal">
+        <div class="servicio-num">01</div>
         <div class="servicio-icon">✨</div>
-        <h3>Estética Dental</h3>
-        <p>Blanqueamiento dental, carillas de porcelana y diseño de sonrisa para una imagen impecable.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
+        <h3>Diseño de Sonrisa</h3>
+        <p>Transformación completa de tu sonrisa con un plan personalizado. Carillas, blanqueamiento y más en una sola propuesta estética.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
       </div>
-      <div class="servicio-card reveal">
+      <div class="servicio reveal">
+        <div class="servicio-num">02</div>
         <div class="servicio-icon">🦷</div>
-        <h3>Odontología General</h3>
-        <p>Revisaciones, limpiezas, empastes y extracciones con la mejor tecnología y sin dolor.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
-      </div>
-      <div class="servicio-card reveal">
-        <div class="servicio-icon">😁</div>
-        <h3>Ortodoncia</h3>
-        <p>Brackets tradicionales y alineadores transparentes para una sonrisa perfectamente alineada.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
-      </div>
-      <div class="servicio-card reveal">
-        <div class="servicio-icon">🔬</div>
         <h3>Implantes Dentales</h3>
-        <p>Solución permanente para dientes perdidos. Implantes de titanio de alta calidad.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
+        <p>Solución definitiva para dientes perdidos. Implantes de titanio con corona de porcelana de alta estética.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
       </div>
-      <div class="servicio-card reveal">
-        <div class="servicio-icon">👶</div>
-        <h3>Odontopediatría</h3>
-        <p>Atención especializada para los más chicos en un ambiente divertido y sin miedo.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
+      <div class="servicio reveal">
+        <div class="servicio-num">03</div>
+        <div class="servicio-icon">💎</div>
+        <h3>Carillas de Porcelana</h3>
+        <p>Laminados ultrafinos que transforman el color, forma y tamaño de tus dientes con resultados naturales.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
       </div>
-      <div class="servicio-card reveal">
+      <div class="servicio reveal">
+        <div class="servicio-num">04</div>
+        <div class="servicio-icon">⚡</div>
+        <h3>Blanqueamiento Laser</h3>
+        <p>Tecnología LED de última generación para hasta 8 tonos más blanco en una sola sesión de 60 minutos.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
+      </div>
+      <div class="servicio reveal">
+        <div class="servicio-num">05</div>
+        <div class="servicio-icon">◎</div>
+        <h3>Ortodoncia Invisible</h3>
+        <p>Alineadores transparentes Invisalign para corregir tu sonrisa sin que nadie lo note.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
+      </div>
+      <div class="servicio reveal">
+        <div class="servicio-num">06</div>
         <div class="servicio-icon">🛡️</div>
-        <h3>Urgencias</h3>
-        <p>Atención de urgencias dentales. Llamanos y te damos turno el mismo día.</p>
-        <a href="#turno" class="servicio-link">Consultar →</a>
+        <h3>Odontología General</h3>
+        <p>Revisaciones, limpiezas, tratamientos y urgencias con el más alto estándar de calidad y cuidado.</p>
+        <a href="#turno" class="servicio-cta">Consultar →</a>
       </div>
     </div>
   </section>
 
   <!-- TURNO -->
-  <section class="section section-turno" id="turno">
-    <div class="turno-wrap">
-      <div class="turno-info reveal">
-        <span class="section-tag">✦ RESERVÁ TU LUGAR</span>
-        <h2>Pedí tu<br><em>turno online</em></h2>
-        <p>Completá el formulario y te contactamos a la brevedad para confirmar tu turno.</p>
-        <div class="turno-contacto">
-          <a href="tel:[TELEFONO]" class="contacto-item">
-            <span>📞</span>
+  <section class="turno" id="turno">
+    <div class="turno-inner">
+      <div class="turno-left reveal">
+        <span class="eyebrow">RESERVAS</span>
+        <h2>Reservá tu<br><em>consulta</em></h2>
+        <div class="turno-sep"></div>
+        <p>Completá el formulario y nos comunicamos con vos dentro de las próximas 24 horas para confirmar tu cita.</p>
+        <div class="turno-contacts">
+          <a href="tel:[TELEFONO]" class="tc">
+            <span class="tc-icon">📞</span>
             <div>
-              <strong>Teléfono</strong>
-              <p>[NÚMERO DE TELÉFONO]</p>
+              <strong>[NÚMERO DE TELÉFONO]</strong>
+              <p>Lun — Vie · 9 a 19hs</p>
             </div>
           </a>
-          <a href="https://wa.me/[NUMERO]" target="_blank" class="contacto-item">
-            <span>💬</span>
+          <a href="https://wa.me/[NUMERO]" target="_blank" class="tc">
+            <span class="tc-icon">💬</span>
             <div>
               <strong>WhatsApp</strong>
-              <p>Escribinos ahora</p>
+              <p>Respondemos en minutos</p>
             </div>
           </a>
-          <div class="contacto-item">
-            <span>🕐</span>
-            <div>
-              <strong>Horarios</strong>
-              <p>Lun-Vie 9 a 19hs · Sáb 9 a 13hs</p>
-            </div>
-          </div>
+        </div>
+        <div class="obras-grid">
+          <span>OSDE</span><span>Swiss Medical</span>
+          <span>IOMA</span><span>PAMI</span>
+          <span>Galeno</span><span>Particular</span>
         </div>
       </div>
       <div class="turno-form reveal">
-        <h3>Solicitá tu turno</h3>
-        <div class="form-row">
+        <div class="form-header">
+          <h3>Solicitud de turno</h3>
+          <span>◆</span>
+        </div>
+        <div class="form-grid">
           <input type="text" id="tNombre" placeholder="Nombre completo *" />
           <input type="tel" id="tTelefono" placeholder="Teléfono *" />
         </div>
         <input type="email" id="tEmail" placeholder="Email (opcional)" />
         <select id="tServicio">
-          <option value="">¿Qué servicio necesitás?</option>
-          <option>Consulta general / Revisación</option>
-          <option>Limpieza dental</option>
-          <option>Blanqueamiento</option>
-          <option>Ortodoncia</option>
-          <option>Implantes</option>
-          <option>Odontopediatría</option>
+          <option value="">Seleccioná un tratamiento</option>
+          <option>Diseño de Sonrisa</option>
+          <option>Implantes Dentales</option>
+          <option>Carillas de Porcelana</option>
+          <option>Blanqueamiento Laser</option>
+          <option>Ortodoncia Invisible</option>
+          <option>Consulta General</option>
           <option>Urgencia</option>
-          <option>Otro</option>
         </select>
         <select id="tObra">
-          <option value="">¿Tenés obra social?</option>
-          <option>No tengo / Particular</option>
+          <option value="">Obra social / Particular</option>
+          <option>Particular</option>
           <option>OSDE</option>
           <option>Swiss Medical</option>
           <option>IOMA</option>
@@ -239,80 +252,74 @@
           <option>Galeno</option>
           <option>Otra</option>
         </select>
-        <textarea id="tMensaje" placeholder="Contanos algo más (opcional)"></textarea>
-        <button class="btn btn-primary w100" onclick="sendTurno()">
-          ✦ Solicitar turno por WhatsApp
+        <textarea id="tMensaje" placeholder="¿Alguna consulta adicional?"></textarea>
+        <button class="btn-form" onclick="sendTurno()">
+          Solicitar turno <span>→</span>
         </button>
-        <p class="form-note">Te respondemos en menos de 24hs 😊</p>
+        <p class="form-note">✦ Respondemos en menos de 24 horas</p>
       </div>
     </div>
   </section>
 
   <!-- UBICACIÓN -->
-  <section class="section section-ubicacion" id="ubicacion">
-    <div class="section-header reveal">
-      <span class="section-tag">✦ DÓNDE ESTAMOS</span>
-      <h2>Nuestra <em>ubicación</em></h2>
-    </div>
-    <div class="ubicacion-wrap reveal">
-      <div class="ubicacion-info">
-        <div class="ubicacion-item">
-          <span>📍</span>
-          <div>
-            <strong>Dirección</strong>
-            <p>[CALLE, NÚMERO, PISO/LOCAL]<br>[CIUDAD, PROVINCIA]</p>
+  <section class="ubicacion" id="ubicacion">
+    <div class="ubicacion-inner">
+      <div class="ubicacion-info reveal">
+        <span class="eyebrow">UBICACIÓN</span>
+        <h2>Visitanos en<br>nuestro <em>consultorio</em></h2>
+        <div class="ubi-items">
+          <div class="ubi-item">
+            <span>📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p>[CALLE Y NÚMERO]<br>[CIUDAD, PROVINCIA]</p>
+            </div>
+          </div>
+          <div class="ubi-item">
+            <span>🕐</span>
+            <div>
+              <strong>Horarios</strong>
+              <p>Lun — Vie: 9:00 a 19:00hs<br>Sábados: 9:00 a 13:00hs</p>
+            </div>
+          </div>
+          <div class="ubi-item">
+            <span>🅿️</span>
+            <div>
+              <strong>Estacionamiento</strong>
+              <p>[INFO DE ESTACIONAMIENTO]</p>
+            </div>
           </div>
         </div>
-        <div class="ubicacion-item">
-          <span>🚇</span>
-          <div>
-            <strong>Cómo llegar</strong>
-            <p>[REFERENCIAS DE TRANSPORTE]</p>
-          </div>
-        </div>
-        <div class="ubicacion-item">
-          <span>🅿️</span>
-          <div>
-            <strong>Estacionamiento</strong>
-            <p>[INFO DE ESTACIONAMIENTO]</p>
-          </div>
-        </div>
-        <a href="https://maps.google.com/?q=[DIRECCIÓN]" target="_blank" class="btn btn-primary" style="margin-top:1.5rem">
-          📍 Ver en Google Maps
-        </a>
+        <a href="https://maps.google.com" target="_blank" class="btn-mapa">Ver en Google Maps →</a>
       </div>
-      <!-- Reemplazá [TU-DIRECCION] con la dirección real para que aparezca el mapa -->
-      <div class="mapa-wrap">
-        <iframe
-          src="https://maps.google.com/maps?q=Berazategui,Buenos+Aires&output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
+      <div class="mapa reveal">
+        <iframe src="https://maps.google.com/maps?q=Berazategui,Buenos+Aires&output=embed" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">✦ Dra. <span>[APELLIDO]</span></div>
-      <p>Odontología Estética & General · [CIUDAD]</p>
+    <div class="footer-top">
+      <div class="footer-logo">DENTAL<span>STUDIO</span></div>
       <div class="footer-links">
         <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#turno">Turno</a>
+        <a href="#filosofia">Filosofía</a>
+        <a href="#servicios">Tratamientos</a>
+        <a href="#turno">Reservar</a>
         <a href="#ubicacion">Ubicación</a>
       </div>
-      <p class="footer-copy">© 2026 Consultorio Odontológico · Todos los derechos reservados</p>
+      <a href="https://wa.me/[NUMERO]" target="_blank" class="footer-wa">💬 WhatsApp</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dental Studio · Dra. [Nombre Apellido] · M.N. [Número]</p>
+      <p>Todos los derechos reservados</p>
     </div>
   </footer>
 
   <!-- WA FLOTANTE -->
-  <a href="https://wa.me/[NUMERO]?text=Hola! Quiero pedir un turno" target="_blank" class="wa-float">
-    <span class="wa-tooltip">Pedir turno</span>
+  <a href="https://wa.me/[NUMERO]?text=Hola! Quiero reservar una consulta" target="_blank" class="wa-float">
+    <span class="wa-tip">Reservar turno</span>
     💬
   </a>
 
