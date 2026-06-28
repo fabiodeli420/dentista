@@ -1,265 +1,756 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HAKU — Streetwear</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-</head>
-<body>
+/* =========================================
+   HAKU — CSS Principal
+   Negro + Azul Eléctrico · Streetwear
+   ========================================= */
 
-  <!-- FONDO GRID ANIMADO -->
-  <div class="grid-bg" id="gridBg"></div>
-  <div class="scanline"></div>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap');
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">HAKU<span class="logo-dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-        <li><a href="#coleccion" class="nav-link">Colección</a></li>
-        <li><a href="#pedidos" class="nav-link">Pedidos</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
-      <div class="nav-actions">
-        <button class="cart-btn" id="cartBtn">
-          <span class="cart-icon">BAG</span>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-        <button class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <div class="nav-mobile" id="navMobile">
-      <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#coleccion" class="nav-link">Colección</a>
-      <a href="#pedidos" class="nav-link">Pedidos</a>
-      <a href="#nosotros" class="nav-link">Nosotros</a>
-      <a href="#contacto" class="nav-link">Contacto</a>
-    </div>
-  </nav>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <span>HAKU STREETWEAR</span><span class="sep">—</span>
-      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
-      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
-      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
-      <span>HAKU STREETWEAR</span><span class="sep">—</span>
-      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
-      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
-      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
-    </div>
-  </div>
+:root {
+  --bg:       #080a0f;
+  --bg2:      #0b0e15;
+  --card:     #0f1320;
+  --border:   #1a2035;
+  --electric: #1e90ff;
+  --elec2:    #00c8ff;
+  --elec-dim: rgba(30,144,255,0.15);
+  --text:     #e8edf5;
+  --muted:    #4a5570;
+  --white:    #ffffff;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <div class="hero-eyebrow"><span class="blink">▮</span> SS26 DROP 001</div>
-      <h1 class="hero-title">
-        <span class="title-line">MOVE</span>
-        <span class="title-line accent">DIFFERENT</span>
-      </h1>
-      <p class="hero-sub">Ropa para los que no piden permiso. Streetwear construido desde adentro hacia afuera.</p>
-      <div class="hero-btns">
-        <a href="#coleccion" class="btn btn-primary">Ver Colección</a>
-        <a href="#pedidos" class="btn btn-ghost">Hacer Pedido</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-box">
-        <div class="hbox-label">HAKU / SS26</div>
-        <div class="hbox-logo">H</div>
-        <div class="hbox-tags">
-          <span>OVERSIZE</span>
-          <span>URBAN</span>
-          <span>PREMIUM</span>
-          <span>ARG</span>
-        </div>
-        <div class="hbox-line"></div>
-        <div class="hbox-sub">Buenos Aires, Argentina</div>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Prendas</span></div>
-        <div class="hstat-div"></div>
-        <div class="hstat"><span class="hstat-n">AR</span><span class="hstat-l">Todo el país</span></div>
-        <div class="hstat-div"></div>
-        <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">Premium</span></div>
-      </div>
-    </div>
-  </section>
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
 
-  <!-- COLECCIÓN -->
-  <section class="section" id="coleccion">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">// CATÁLOGO</div>
-      <h2>COLECCIÓN</h2>
-    </div>
-    <div class="products-grid" id="productsGrid"></div>
-  </section>
+/* ===== GRID BG ===== */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(30,144,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,144,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
 
-  <!-- PEDIDOS -->
-  <section class="section-dark" id="pedidos">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">// PROCESO</div>
-      <h2>CÓMO PEDÍS</h2>
-    </div>
-    <div class="steps-row reveal">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <h4>Elegí la prenda</h4>
-          <p>Revisá el catálogo, elegí modelo, talle y color.</p>
-        </div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <h4>Completá el form</h4>
-          <p>Nombre, prenda, talle. Directo y sin vueltas.</p>
-        </div>
-      </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <h4>Lo coordinamos</h4>
-          <p>Confirmamos por WhatsApp y te lo mandamos.</p>
-        </div>
-      </div>
-    </div>
-    <div class="form-wrap reveal">
-      <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU%20🖤" class="btn btn-primary" target="_blank">Escribir por WhatsApp</a>
-      <div class="order-form">
-        <div class="form-title">FORMULARIO DE PEDIDO</div>
-        <input type="text" id="fname" placeholder="Tu nombre *" />
-        <select id="fprenda">
-          <option value="">Elegí una prenda...</option>
-          <option>Remera Oversize</option>
-          <option>Buzo Hoodie</option>
-          <option>Pantalón Cargo</option>
-          <option>Jogger Técnico</option>
-          <option>Set Completo (Buzo + Pantalón)</option>
-          <option>Cap Haku</option>
-        </select>
-        <div class="talle-group">
-          <label>TALLE</label>
-          <div class="talles">
-            <button type="button" class="talle-btn" onclick="selectTalle(this)">S</button>
-            <button type="button" class="talle-btn" onclick="selectTalle(this)">M</button>
-            <button type="button" class="talle-btn" onclick="selectTalle(this)">L</button>
-            <button type="button" class="talle-btn" onclick="selectTalle(this)">XL</button>
-            <button type="button" class="talle-btn" onclick="selectTalle(this)">XXL</button>
-          </div>
-        </div>
-        <input type="text" id="fcolor" placeholder="Color preferido" />
-        <textarea id="fnota" placeholder="Nota adicional (opcional)"></textarea>
-        <button type="button" class="btn btn-primary w100" onclick="sendOrder()">Enviar por WhatsApp</button>
-      </div>
-    </div>
-  </section>
+.scanline {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+}
 
-  <!-- TESTIMONIOS -->
-  <section class="section" id="testimonios">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">// REVIEWS</div>
-      <h2>LO QUE DICEN</h2>
-    </div>
-    <div class="testimonios-grid reveal" id="testimoniosGrid"></div>
-  </section>
+/* ===== BLINK ===== */
+.blink { animation: blink 1s step-end infinite; color: var(--electric); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  <!-- NOSOTROS -->
-  <section class="section-dark manifesto" id="nosotros">
-    <div class="manifesto-inner reveal">
-      <div class="manifesto-tag">// QUIÉNES SOMOS</div>
-      <h2 class="manifesto-title">HAKU<br>NO ES<br>UNA MARCA.</h2>
-      <p class="manifesto-body">Es una actitud. Nacimos en Buenos Aires con una sola obsesión: que la ropa que usás diga algo antes de que abras la boca. Sin logos gigantes ni tendencias prestadas. Solo corte, calidad y flow.</p>
-      <div class="manifesto-pills">
-        <span>Oversize real</span>
-        <span>Sin relleno</span>
-        <span>Hecho para durar</span>
-        <span>BA, Argentina</span>
-        <span>Cultura urbana</span>
-      </div>
-    </div>
-  </section>
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+  transition: background 0.3s, border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.navbar.scrolled {
+  background: rgba(8,10,15,0.94);
+  backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 4px;
+}
+.logo-dot { color: var(--electric); }
+.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--electric); }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+.cart-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.cart-btn:hover { border-color: var(--electric); color: var(--electric); }
+.cart-count {
+  background: var(--electric);
+  color: var(--bg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 2px;
+  min-width: 18px;
+  text-align: center;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span { width: 22px; height: 1.5px; background: var(--text); display: block; transition: all 0.3s; }
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.2rem 2rem;
+  background: rgba(8,10,15,0.98);
+  border-top: 1px solid var(--border);
+}
+.nav-mobile.open { display: flex; }
 
-  <!-- CONTACTO -->
-  <section class="section" id="contacto">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">// CONTACTO</div>
-      <h2>HABLEMOS</h2>
-    </div>
-    <div class="contact-grid reveal">
-      <a href="https://wa.me/541156584277" class="contact-card" target="_blank">
-        <div class="contact-icon">WA</div>
-        <h4>WhatsApp</h4>
-        <p>+54 11 5658-4277</p>
-        <span class="contact-link">Escribir ahora →</span>
-      </a>
-      <div class="contact-card">
-        <div class="contact-icon">📦</div>
-        <h4>Envíos</h4>
-        <p>Todo el país</p>
-        <span class="contact-link">Lo coordinamos</span>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">🕐</div>
-        <h4>Horarios</h4>
-        <p>Lun–Sáb 10 a 21hs</p>
-        <span class="contact-link">Respondemos rápido</span>
-      </div>
-      <a href="https://www.instagram.com/deli.kush/" class="contact-card" target="_blank">
-        <div class="contact-icon">IG</div>
-        <h4>Instagram</h4>
-        <p>@deli.kush</p>
-        <span class="contact-link">Seguinos →</span>
-      </a>
-    </div>
-  </section>
+/* ===== TICKER ===== */
+.ticker-wrap {
+  position: relative;
+  z-index: 10;
+  margin-top: 68px;
+  background: var(--electric);
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.ticker {
+  display: flex;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: ticker 24s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--bg);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.ticker .sep { opacity: 0.5; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">HAKU<span>.</span></div>
-      <p>Streetwear para los que se mueven diferente.</p>
-      <div class="footer-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#coleccion">Colección</a>
-        <a href="#pedidos">Pedidos</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <p class="footer-copy">© 2026 <strong>HAKU</strong> · Buenos Aires, Argentina</p>
-    </div>
-  </footer>
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8rem 4rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4rem;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--electric);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 0.88;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+.title-line { display: block; color: var(--text); }
+.title-line.accent {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--electric);
+  filter: drop-shadow(0 0 20px rgba(30,144,255,0.5));
+}
+.hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 400px;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-  <!-- CARRITO -->
-  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-  <div class="cart-drawer" id="cartDrawer">
-    <div class="cart-header">
-      <h3>TU BAG</h3>
-      <button onclick="closeCart()">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total">TOTAL <span id="cartTotal">$0</span></div>
-      <button class="btn btn-primary w100" onclick="checkoutCart()">Enviar por WhatsApp</button>
-    </div>
-  </div>
+.hero-visual { flex-shrink: 0; display: flex; flex-direction: column; gap: 1.5rem; }
+.hero-box {
+  width: 300px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2rem;
+  position: relative;
+  background: var(--card);
+  overflow: hidden;
+}
+.hero-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--electric), var(--elec2));
+}
+.hbox-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+.hbox-logo {
+  font-family: var(--font-display);
+  font-size: 7rem;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--electric);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 15px rgba(30,144,255,0.3));
+}
+.hbox-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+.hbox-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--electric);
+  border: 1px solid rgba(30,144,255,0.3);
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+}
+.hbox-line { height: 1px; background: var(--border); margin-bottom: 1rem; }
+.hbox-sub { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 2px; }
 
-  <!-- WA FLOTANTE -->
-  <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU" class="wa-float" target="_blank">
-    <span class="wa-tooltip">¡Pedí ahora!</span>
-    💬
-  </a>
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--card);
+}
+.hstat { flex: 1; padding: 1rem; text-align: center; }
+.hstat-n { display: block; font-family: var(--font-display); font-size: 1.6rem; color: var(--electric); }
+.hstat-l { display: block; font-family: var(--font-mono); font-size: 0.6rem; color: var(--muted); letter-spacing: 2px; margin-top: 2px; text-transform: uppercase; }
+.hstat-div { width: 1px; background: var(--border); align-self: stretch; }
 
-  <div id="confettiContainer"></div>
-  <script src="main.js"></script>
-</body>
-</html>
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--electric);
+  color: var(--bg);
+  border-color: var(--electric);
+}
+.btn-primary:hover {
+  background: var(--elec2);
+  border-color: var(--elec2);
+  box-shadow: 0 0 30px rgba(30,144,255,0.4);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-ghost:hover {
+  border-color: var(--electric);
+  color: var(--electric);
+}
+.w100 { width: 100%; text-align: center; }
+
+/* ===== SECCIONES ===== */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 7rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-dark {
+  position: relative;
+  z-index: 1;
+  background: var(--bg2);
+  padding: 7rem 2rem;
+}
+.section-dark > .section-header,
+.section-dark > .steps-row,
+.section-dark > .form-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-header { margin-bottom: 4rem; }
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--electric);
+  letter-spacing: 4px;
+  margin-bottom: 0.8rem;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--text);
+  letter-spacing: 3px;
+}
+
+/* ===== PRODUCTOS ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.product-card {
+  background: var(--card);
+  overflow: hidden;
+  transition: background 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+.product-card:hover { background: #111827; }
+.product-card:hover .product-img-inner { transform: scale(1.04); }
+.product-img {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.product-img-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  transition: transform 0.4s ease;
+}
+.product-img-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--card));
+  transition: opacity 0.3s;
+}
+.product-card:hover .product-img-inner::after { opacity: 0.6; }
+.product-info { padding: 1.2rem 1.4rem 1.4rem; }
+.product-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--electric);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text);
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+}
+.product-desc { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.5; }
+.stock-bar { height: 2px; background: var(--border); margin-bottom: 0.5rem; overflow: hidden; }
+.stock-fill { height: 100%; background: linear-gradient(90deg, var(--electric), var(--elec2)); }
+.product-stock { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); margin-bottom: 1rem; }
+.product-stock.low { color: #ff6b6b; }
+.product-bottom { display: flex; align-items: center; justify-content: space-between; }
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--electric);
+  letter-spacing: 1px;
+}
+.add-btn {
+  background: transparent;
+  color: var(--electric);
+  border: 1px solid var(--electric);
+  width: 36px; height: 36px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-btn:hover {
+  background: var(--electric);
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(30,144,255,0.4);
+}
+
+/* ===== STEPS ===== */
+.steps-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 4rem;
+  max-width: 900px;
+}
+.step {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 2px;
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--electric);
+  opacity: 0.4;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.step-content h4 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.step-content p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.step-arrow {
+  font-family: var(--font-mono);
+  color: var(--electric);
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ===== FORMULARIO ===== */
+.form-wrap { max-width: 580px; margin: 0 auto; text-align: center; }
+.order-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: left;
+  position: relative;
+}
+.order-form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--electric), var(--elec2));
+}
+.form-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--electric);
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+}
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  margin-bottom: 0.8rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: var(--electric);
+  box-shadow: 0 0 0 3px rgba(30,144,255,0.08);
+}
+.order-form select option { background: var(--bg); }
+.order-form textarea { height: 80px; resize: vertical; }
+.talle-group label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.talles { display: flex; gap: 0.4rem; margin-bottom: 0.8rem; }
+.talle-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+.talle-btn:hover, .talle-btn.active {
+  border-color: var(--electric);
+  color: var(--electric);
+  background: var(--elec-dim);
+}
+
+/* ===== TESTIMONIOS ===== */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.testimonio-card {
+  background: var(--card);
+  padding: 1.8rem;
+  transition: background 0.3s;
+}
+.testimonio-card:hover { background: #111827; }
+.t-stars { color: var(--electric); font-size: 0.8rem; margin-bottom: 0.8rem; letter-spacing: 3px; }
+.t-text { font-size: 0.88rem; color: var(--text); line-height: 1.7; margin-bottom: 1rem; font-style: italic; opacity: 0.85; }
+.t-author { font-family: var(--font-mono); font-size: 0.72rem; color: var(--electric); letter-spacing: 2px; text-transform: uppercase; }
+.t-city { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
+
+/* ===== MANIFESTO ===== */
+.manifesto { padding: 8rem 2rem; }
+.manifesto-inner { max-width: 800px; margin: 0 auto; }
+.manifesto-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--electric);
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+}
+.manifesto-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: 3px;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+.manifesto-body {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+.manifesto-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.manifesto-pills span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--electric);
+  border: 1px solid rgba(30,144,255,0.25);
+  padding: 4px 12px;
+  border-radius: 2px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ===== CONTACTO ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.contact-card {
+  background: var(--card);
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s;
+  color: var(--text);
+}
+.contact-card:hover { background: #111827; }
+.contact-icon {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--electric);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+.contact-card h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.contact-card p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.8rem; }
+.contact-link { font-family: var(--font-mono); font-size: 0.68rem; color: var(--electric); letter-spacing: 2px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.footer-logo span { color: var(--electric); }
+.footer p { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.5rem; }
+.footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a:hover { color: var(--electric); }
+.footer-copy { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 1px; }
+.footer-copy strong { color: var(--electric); }
+
+/* ===== CARRITO ===== */
+.cart-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 2000; backdrop-filter: blur(4px); }
+.cart-overlay.open { display: block; }
+.cart-drawer {
+  position: fixed;
+  top: 0; right: -420px;
+  width: 380px; height: 100vh;
+  background: var(--bg2);
+  border-left: 1px solid var(--border);
+  z-index: 2001;
+  transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.cart-drawer.open { right: 0; }
+.cart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.cart-header h3 { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 4px; color: var(--text); }
+.cart-header button { background: none; border: none; color: var(--muted); font-size: 1rem; cursor: pointer; font-family: var(--font-mono); }
+.cart-items { flex: 1; overflow-y: auto; }
+.cart-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.cart-item-emoji { font-size: 2rem; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-family: var(--font-display); font-size: 1rem; letter-spacing: 1px; color: var(--text); }
+.cart-item-price { font-family: var(--font-mono); font-size: 0.8rem; color: var(--electric); }
+.cart-item-qty { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.85rem; }
+.qty-btn { background: var(--border); border: none; color: var(--text); width: 24px; height: 24px; border-radius: 2px; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.qty-btn:hover { background: var(--electric); color: var(--bg); }
+.cart-footer { border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; }
+.cart-total { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; color: var(--muted); }
+.cart-total span { color: var(--electric); font-size: 1.1rem; }
+
+/* ===== WA FLOTANTE ===== */
+.wa-float {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  z-index: 999;
+  background: #25d366;
+  color: white;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(37,211,102,0.35);
+  transition: transform 0.3s;
+}
+.wa-float:hover { transform: scale(1.1); }
+.wa-tooltip { position: absolute; right: 66px; background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.4rem 0.8rem; border-radius: 2px; font-family: var(--font-mono); font-size: 0.7rem; white-space: nowrap; opacity: 0; transition: opacity 0.3s; letter-spacing: 1px; }
+.wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* ===== CONFETTI ===== */
+#confettiContainer { position: fixed; inset: 0; pointer-events: none; z-index: 9999; }
+.confetti-piece { position: absolute; width: 8px; height: 8px; border-radius: 1px; animation: confettiFall 1s ease-out forwards; }
+@keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; } 100% { transform: translateY(280px) rotate(720deg) scale(0.3); opacity: 0; } }
+
+/* ===== REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { flex-direction: column; padding: 5rem 1.5rem 3rem; }
+  .hero-btns { flex-wrap: wrap; }
+  .hero-visual { width: 100%; }
+  .hero-box { width: 100%; }
+  .steps-row { flex-direction: column; }
+  .step-arrow { transform: rotate(90deg); }
+  .section { padding: 5rem 1.5rem; }
+  .section-dark { padding: 5rem 1.5rem; }
+  .manifesto { padding: 5rem 1.5rem; }
+} 
