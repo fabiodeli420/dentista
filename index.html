@@ -3,326 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DENTAL STUDIO · Dra. [Apellido]</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@200;300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <title>HAKU — Streetwear</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- LOADER -->
-  <div class="loader" id="loader">
-    <div class="loader-text">DENTAL STUDIO</div>
-    <div class="loader-bar"><div class="loader-fill"></div></div>
-  </div>
+  <!-- FONDO GRID ANIMADO -->
+  <div class="grid-bg" id="gridBg"></div>
+  <div class="scanline"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">
-        DENTAL<span>STUDIO</span>
-      </a>
+      <a href="#inicio" class="nav-logo">HAKU<span class="logo-dot">.</span></a>
       <ul class="nav-links">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#filosofia" class="nav-link">Filosofía</a></li>
-        <li><a href="#servicios" class="nav-link">Tratamientos</a></li>
-        <li><a href="#turno" class="nav-link">Reservar</a></li>
-        <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#coleccion" class="nav-link">Colección</a></li>
+        <li><a href="#pedidos" class="nav-link">Pedidos</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
-      <a href="#turno" class="btn-nav">Reservar turno</a>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn">
+          <span class="cart-icon">BAG</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
     <div class="nav-mobile" id="navMobile">
       <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#filosofia" class="nav-link">Filosofía</a>
-      <a href="#servicios" class="nav-link">Tratamientos</a>
-      <a href="#turno" class="nav-link">Reservar</a>
-      <a href="#ubicacion" class="nav-link">Ubicación</a>
+      <a href="#coleccion" class="nav-link">Colección</a>
+      <a href="#pedidos" class="nav-link">Pedidos</a>
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-media">
-      <img src="img/hero.jpg" alt="Dental Studio" class="hero-img" onerror="this.style.display='none'" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-left reveal">
-        <div class="hero-eyebrow">Odontología de Excelencia</div>
-        <h1 class="hero-title">La sonrisa<br>que <em>mereces</em></h1>
-        <p class="hero-desc">Tratamientos estéticos y restaurativos de primer nivel, en un ambiente de lujo diseñado para tu bienestar.</p>
-        <a href="#turno" class="btn-hero">Reservar consulta</a>
-      </div>
-      <div class="hero-right reveal">
-        <div class="hero-pill">
-          <div class="pill-top">
-            <span class="pill-icon">✦</span>
-            <span class="pill-label">DENTAL STUDIO</span>
-          </div>
-          <div class="pill-stat">
-            <div class="ps"><span class="ps-n">+800</span><span class="ps-l">Pacientes</span></div>
-            <div class="ps-div"></div>
-            <div class="ps"><span class="ps-n">15+</span><span class="ps-l">Años</span></div>
-            <div class="ps-div"></div>
-            <div class="ps"><span class="ps-n">100%</span><span class="ps-l">Satisfacción</span></div>
-          </div>
-          <div class="pill-bottom">
-            <span>Dra. [Nombre Apellido]</span>
-            <span>M.N. [Número]</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>SCROLL</span>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee">
-      <span>ESTÉTICA DENTAL</span><span class="mdot">◆</span>
-      <span>BLANQUEAMIENTO</span><span class="mdot">◆</span>
-      <span>IMPLANTES</span><span class="mdot">◆</span>
-      <span>ORTODONCIA</span><span class="mdot">◆</span>
-      <span>DISEÑO DE SONRISA</span><span class="mdot">◆</span>
-      <span>CARILLAS</span><span class="mdot">◆</span>
-      <span>ESTÉTICA DENTAL</span><span class="mdot">◆</span>
-      <span>BLANQUEAMIENTO</span><span class="mdot">◆</span>
-      <span>IMPLANTES</span><span class="mdot">◆</span>
-      <span>ORTODONCIA</span><span class="mdot">◆</span>
-      <span>DISEÑO DE SONRISA</span><span class="mdot">◆</span>
-      <span>CARILLAS</span><span class="mdot">◆</span>
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>HAKU STREETWEAR</span><span class="sep">—</span>
+      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
+      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
+      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
+      <span>HAKU STREETWEAR</span><span class="sep">—</span>
+      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
+      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
+      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
     </div>
   </div>
 
-  <!-- FILOSOFÍA -->
-  <section class="filosofia" id="filosofia">
-    <div class="filosofia-inner">
-      <div class="filosofia-img reveal">
-        <img src="img/doctor.jpg" alt="Dra. [Nombre]" onerror="this.style.display='none'" />
-        <div class="filosofia-tag">
-          <span>15+</span>
-          años de experiencia
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="blink">▮</span> SS26 DROP 001</div>
+      <h1 class="hero-title">
+        <span class="title-line">MOVE</span>
+        <span class="title-line accent">DIFFERENT</span>
+      </h1>
+      <p class="hero-sub">Ropa para los que no piden permiso. Streetwear construido desde adentro hacia afuera.</p>
+      <div class="hero-btns">
+        <a href="#coleccion" class="btn btn-primary">Ver Colección</a>
+        <a href="#pedidos" class="btn btn-ghost">Hacer Pedido</a>
       </div>
-      <div class="filosofia-content reveal">
-        <span class="eyebrow">NUESTRA FILOSOFÍA</span>
-        <h2>Donde la <em>ciencia</em><br>se encuentra con<br>el <em>arte</em></h2>
-        <div class="filosofia-sep"></div>
-        <p>Creemos que cada sonrisa cuenta una historia única. Nuestro enfoque combina la precisión científica con la sensibilidad estética para crear resultados que van más allá de lo esperado.</p>
-        <p>En nuestro consultorio, cada detalle fue diseñado para que te sientas en un ambiente exclusivo, relajante y de máximo confort.</p>
-        <div class="filosofia-items">
-          <div class="fi">
-            <div class="fi-icon">◈</div>
-            <div>
-              <strong>Tecnología de punta</strong>
-              <p>Equipamiento de última generación importado</p>
-            </div>
-          </div>
-          <div class="fi">
-            <div class="fi-icon">◈</div>
-            <div>
-              <strong>Materiales premium</strong>
-              <p>Solo los mejores materiales del mercado</p>
-            </div>
-          </div>
-          <div class="fi">
-            <div class="fi-icon">◈</div>
-            <div>
-              <strong>Sin dolor</strong>
-              <p>Anestesia de última generación y sedación</p>
-            </div>
-          </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-box">
+        <div class="hbox-label">HAKU / SS26</div>
+        <div class="hbox-logo">H</div>
+        <div class="hbox-tags">
+          <span>OVERSIZE</span>
+          <span>URBAN</span>
+          <span>PREMIUM</span>
+          <span>ARG</span>
         </div>
+        <div class="hbox-line"></div>
+        <div class="hbox-sub">Buenos Aires, Argentina</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Prendas</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">AR</span><span class="hstat-l">Todo el país</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">Premium</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section class="servicios" id="servicios">
-    <div class="servicios-header reveal">
-      <span class="eyebrow light">TRATAMIENTOS</span>
-      <h2 class="light">Nuestros <em>servicios</em><br>de excelencia</h2>
+  <!-- COLECCIÓN -->
+  <section class="section" id="coleccion">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// CATÁLOGO</div>
+      <h2>COLECCIÓN</h2>
     </div>
-    <div class="servicios-grid">
-      <div class="servicio reveal">
-        <div class="servicio-num">01</div>
-        <div class="servicio-icon">✨</div>
-        <h3>Diseño de Sonrisa</h3>
-        <p>Transformación completa de tu sonrisa con un plan personalizado. Carillas, blanqueamiento y más en una sola propuesta estética.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-      <div class="servicio reveal">
-        <div class="servicio-num">02</div>
-        <div class="servicio-icon">🦷</div>
-        <h3>Implantes Dentales</h3>
-        <p>Solución definitiva para dientes perdidos. Implantes de titanio con corona de porcelana de alta estética.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-      <div class="servicio reveal">
-        <div class="servicio-num">03</div>
-        <div class="servicio-icon">💎</div>
-        <h3>Carillas de Porcelana</h3>
-        <p>Laminados ultrafinos que transforman el color, forma y tamaño de tus dientes con resultados naturales.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-      <div class="servicio reveal">
-        <div class="servicio-num">04</div>
-        <div class="servicio-icon">⚡</div>
-        <h3>Blanqueamiento Laser</h3>
-        <p>Tecnología LED de última generación para hasta 8 tonos más blanco en una sola sesión de 60 minutos.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-      <div class="servicio reveal">
-        <div class="servicio-num">05</div>
-        <div class="servicio-icon">◎</div>
-        <h3>Ortodoncia Invisible</h3>
-        <p>Alineadores transparentes Invisalign para corregir tu sonrisa sin que nadie lo note.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-      <div class="servicio reveal">
-        <div class="servicio-num">06</div>
-        <div class="servicio-icon">🛡️</div>
-        <h3>Odontología General</h3>
-        <p>Revisaciones, limpiezas, tratamientos y urgencias con el más alto estándar de calidad y cuidado.</p>
-        <a href="#turno" class="servicio-cta">Consultar →</a>
-      </div>
-    </div>
+    <div class="products-grid" id="productsGrid"></div>
   </section>
 
-  <!-- TURNO -->
-  <section class="turno" id="turno">
-    <div class="turno-inner">
-      <div class="turno-left reveal">
-        <span class="eyebrow">RESERVAS</span>
-        <h2>Reservá tu<br><em>consulta</em></h2>
-        <div class="turno-sep"></div>
-        <p>Completá el formulario y nos comunicamos con vos dentro de las próximas 24 horas para confirmar tu cita.</p>
-        <div class="turno-contacts">
-          <a href="tel:[TELEFONO]" class="tc">
-            <span class="tc-icon">📞</span>
-            <div>
-              <strong>[NÚMERO DE TELÉFONO]</strong>
-              <p>Lun — Vie · 9 a 19hs</p>
-            </div>
-          </a>
-          <a href="https://wa.me/[NUMERO]" target="_blank" class="tc">
-            <span class="tc-icon">💬</span>
-            <div>
-              <strong>WhatsApp</strong>
-              <p>Respondemos en minutos</p>
-            </div>
-          </a>
-        </div>
-        <div class="obras-grid">
-          <span>OSDE</span><span>Swiss Medical</span>
-          <span>IOMA</span><span>PAMI</span>
-          <span>Galeno</span><span>Particular</span>
+  <!-- PEDIDOS -->
+  <section class="section-dark" id="pedidos">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// PROCESO</div>
+      <h2>CÓMO PEDÍS</h2>
+    </div>
+    <div class="steps-row reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Elegí la prenda</h4>
+          <p>Revisá el catálogo, elegí modelo, talle y color.</p>
         </div>
       </div>
-      <div class="turno-form reveal">
-        <div class="form-header">
-          <h3>Solicitud de turno</h3>
-          <span>◆</span>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Completá el form</h4>
+          <p>Nombre, prenda, talle. Directo y sin vueltas.</p>
         </div>
-        <div class="form-grid">
-          <input type="text" id="tNombre" placeholder="Nombre completo *" />
-          <input type="tel" id="tTelefono" placeholder="Teléfono *" />
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Lo coordinamos</h4>
+          <p>Confirmamos por WhatsApp y te lo mandamos.</p>
         </div>
-        <input type="email" id="tEmail" placeholder="Email (opcional)" />
-        <select id="tServicio">
-          <option value="">Seleccioná un tratamiento</option>
-          <option>Diseño de Sonrisa</option>
-          <option>Implantes Dentales</option>
-          <option>Carillas de Porcelana</option>
-          <option>Blanqueamiento Laser</option>
-          <option>Ortodoncia Invisible</option>
-          <option>Consulta General</option>
-          <option>Urgencia</option>
+      </div>
+    </div>
+    <div class="form-wrap reveal">
+      <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU%20🖤" class="btn btn-primary" target="_blank">Escribir por WhatsApp</a>
+      <div class="order-form">
+        <div class="form-title">FORMULARIO DE PEDIDO</div>
+        <input type="text" id="fname" placeholder="Tu nombre *" />
+        <select id="fprenda">
+          <option value="">Elegí una prenda...</option>
+          <option>Remera Oversize</option>
+          <option>Buzo Hoodie</option>
+          <option>Pantalón Cargo</option>
+          <option>Jogger Técnico</option>
+          <option>Set Completo (Buzo + Pantalón)</option>
+          <option>Cap Haku</option>
         </select>
-        <select id="tObra">
-          <option value="">Obra social / Particular</option>
-          <option>Particular</option>
-          <option>OSDE</option>
-          <option>Swiss Medical</option>
-          <option>IOMA</option>
-          <option>PAMI</option>
-          <option>Galeno</option>
-          <option>Otra</option>
-        </select>
-        <textarea id="tMensaje" placeholder="¿Alguna consulta adicional?"></textarea>
-        <button class="btn-form" onclick="sendTurno()">
-          Solicitar turno <span>→</span>
-        </button>
-        <p class="form-note">✦ Respondemos en menos de 24 horas</p>
+        <div class="talle-group">
+          <label>TALLE</label>
+          <div class="talles">
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">S</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">M</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">L</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">XL</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">XXL</button>
+          </div>
+        </div>
+        <input type="text" id="fcolor" placeholder="Color preferido" />
+        <textarea id="fnota" placeholder="Nota adicional (opcional)"></textarea>
+        <button type="button" class="btn btn-primary w100" onclick="sendOrder()">Enviar por WhatsApp</button>
       </div>
     </div>
   </section>
 
-  <!-- UBICACIÓN -->
-  <section class="ubicacion" id="ubicacion">
-    <div class="ubicacion-inner">
-      <div class="ubicacion-info reveal">
-        <span class="eyebrow">UBICACIÓN</span>
-        <h2>Visitanos en<br>nuestro <em>consultorio</em></h2>
-        <div class="ubi-items">
-          <div class="ubi-item">
-            <span>📍</span>
-            <div>
-              <strong>Dirección</strong>
-              <p>[CALLE Y NÚMERO]<br>[CIUDAD, PROVINCIA]</p>
-            </div>
-          </div>
-          <div class="ubi-item">
-            <span>🕐</span>
-            <div>
-              <strong>Horarios</strong>
-              <p>Lun — Vie: 9:00 a 19:00hs<br>Sábados: 9:00 a 13:00hs</p>
-            </div>
-          </div>
-          <div class="ubi-item">
-            <span>🅿️</span>
-            <div>
-              <strong>Estacionamiento</strong>
-              <p>[INFO DE ESTACIONAMIENTO]</p>
-            </div>
-          </div>
-        </div>
-        <a href="https://maps.google.com" target="_blank" class="btn-mapa">Ver en Google Maps →</a>
+  <!-- TESTIMONIOS -->
+  <section class="section" id="testimonios">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// REVIEWS</div>
+      <h2>LO QUE DICEN</h2>
+    </div>
+    <div class="testimonios-grid reveal" id="testimoniosGrid"></div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="section-dark manifesto" id="nosotros">
+    <div class="manifesto-inner reveal">
+      <div class="manifesto-tag">// QUIÉNES SOMOS</div>
+      <h2 class="manifesto-title">HAKU<br>NO ES<br>UNA MARCA.</h2>
+      <p class="manifesto-body">Es una actitud. Nacimos en Buenos Aires con una sola obsesión: que la ropa que usás diga algo antes de que abras la boca. Sin logos gigantes ni tendencias prestadas. Solo corte, calidad y flow.</p>
+      <div class="manifesto-pills">
+        <span>Oversize real</span>
+        <span>Sin relleno</span>
+        <span>Hecho para durar</span>
+        <span>BA, Argentina</span>
+        <span>Cultura urbana</span>
       </div>
-      <div class="mapa reveal">
-        <iframe src="https://maps.google.com/maps?q=Berazategui,Buenos+Aires&output=embed" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// CONTACTO</div>
+      <h2>HABLEMOS</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <a href="https://wa.me/541156584277" class="contact-card" target="_blank">
+        <div class="contact-icon">WA</div>
+        <h4>WhatsApp</h4>
+        <p>+54 11 5658-4277</p>
+        <span class="contact-link">Escribir ahora →</span>
+      </a>
+      <div class="contact-card">
+        <div class="contact-icon">📦</div>
+        <h4>Envíos</h4>
+        <p>Todo el país</p>
+        <span class="contact-link">Lo coordinamos</span>
       </div>
+      <div class="contact-card">
+        <div class="contact-icon">🕐</div>
+        <h4>Horarios</h4>
+        <p>Lun–Sáb 10 a 21hs</p>
+        <span class="contact-link">Respondemos rápido</span>
+      </div>
+      <a href="https://www.instagram.com/deli.kush/" class="contact-card" target="_blank">
+        <div class="contact-icon">IG</div>
+        <h4>Instagram</h4>
+        <p>@deli.kush</p>
+        <span class="contact-link">Seguinos →</span>
+      </a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-logo">DENTAL<span>STUDIO</span></div>
+    <div class="footer-inner">
+      <div class="footer-logo">HAKU<span>.</span></div>
+      <p>Streetwear para los que se mueven diferente.</p>
       <div class="footer-links">
         <a href="#inicio">Inicio</a>
-        <a href="#filosofia">Filosofía</a>
-        <a href="#servicios">Tratamientos</a>
-        <a href="#turno">Reservar</a>
-        <a href="#ubicacion">Ubicación</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#pedidos">Pedidos</a>
+        <a href="#contacto">Contacto</a>
       </div>
-      <a href="https://wa.me/[NUMERO]" target="_blank" class="footer-wa">💬 WhatsApp</a>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Dental Studio · Dra. [Nombre Apellido] · M.N. [Número]</p>
-      <p>Todos los derechos reservados</p>
+      <p class="footer-copy">© 2026 <strong>HAKU</strong> · Buenos Aires, Argentina</p>
     </div>
   </footer>
 
+  <!-- CARRITO -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>TU BAG</h3>
+      <button onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">TOTAL <span id="cartTotal">$0</span></div>
+      <button class="btn btn-primary w100" onclick="checkoutCart()">Enviar por WhatsApp</button>
+    </div>
+  </div>
+
   <!-- WA FLOTANTE -->
-  <a href="https://wa.me/[NUMERO]?text=Hola! Quiero reservar una consulta" target="_blank" class="wa-float">
-    <span class="wa-tip">Reservar turno</span>
+  <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU" class="wa-float" target="_blank">
+    <span class="wa-tooltip">¡Pedí ahora!</span>
     💬
   </a>
 
-  <script src="js/main.js"></script>
+  <div id="confettiContainer"></div>
+  <script src="main.js"></script>
 </body>
-</html>
+</html> 
