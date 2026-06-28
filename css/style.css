@@ -1,218 +1,265 @@
-/* =========================================
-   DENTAL STUDIO — Miami Luxury
-   Negro · Crema · Dorado · Italiano
-   ========================================= */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAKU — Streetwear</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@200;300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+  <!-- FONDO GRID ANIMADO -->
+  <div class="grid-bg" id="gridBg"></div>
+  <div class="scanline"></div>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">HAKU<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#coleccion" class="nav-link">Colección</a></li>
+        <li><a href="#pedidos" class="nav-link">Pedidos</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn">
+          <span class="cart-icon">BAG</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#coleccion" class="nav-link">Colección</a>
+      <a href="#pedidos" class="nav-link">Pedidos</a>
+      <a href="#nosotros" class="nav-link">Nosotros</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </div>
+  </nav>
 
-:root {
-  --negro:    #0a0a0a;
-  --negro2:   #111111;
-  --crema:    #f5f0e8;
-  --crema2:   #ede8de;
-  --dorado:   #c9a84c;
-  --dorado2:  #e8c97a;
-  --blanco:   #fafaf8;
-  --gris:     #888;
-  --border-l: rgba(201,168,76,0.2);
-  --border-d: rgba(201,168,76,0.15);
-  --font-it:  'Italiana', serif;
-  --font-cor: 'Cormorant', serif;
-  --font-j:   'Jost', sans-serif;
-}
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>HAKU STREETWEAR</span><span class="sep">—</span>
+      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
+      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
+      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
+      <span>HAKU STREETWEAR</span><span class="sep">—</span>
+      <span>NUEVA COLECCIÓN 2026</span><span class="sep">—</span>
+      <span>ENVÍOS A TODO EL PAÍS</span><span class="sep">—</span>
+      <span>DROPS EXCLUSIVOS</span><span class="sep">—</span>
+    </div>
+  </div>
 
-html { scroll-behavior: smooth; }
-body { background: var(--crema); color: var(--negro); font-family: var(--font-j); overflow-x: hidden; }
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="blink">▮</span> SS26 DROP 001</div>
+      <h1 class="hero-title">
+        <span class="title-line">MOVE</span>
+        <span class="title-line accent">DIFFERENT</span>
+      </h1>
+      <p class="hero-sub">Ropa para los que no piden permiso. Streetwear construido desde adentro hacia afuera.</p>
+      <div class="hero-btns">
+        <a href="#coleccion" class="btn btn-primary">Ver Colección</a>
+        <a href="#pedidos" class="btn btn-ghost">Hacer Pedido</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-box">
+        <div class="hbox-label">HAKU / SS26</div>
+        <div class="hbox-logo">H</div>
+        <div class="hbox-tags">
+          <span>OVERSIZE</span>
+          <span>URBAN</span>
+          <span>PREMIUM</span>
+          <span>ARG</span>
+        </div>
+        <div class="hbox-line"></div>
+        <div class="hbox-sub">Buenos Aires, Argentina</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Prendas</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">AR</span><span class="hstat-l">Todo el país</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">100%</span><span class="hstat-l">Premium</span></div>
+      </div>
+    </div>
+  </section>
 
-/* ===== LOADER ===== */
-.loader { position: fixed; inset: 0; background: var(--negro); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transition: opacity 0.6s, visibility 0.6s; }
-.loader.hidden { opacity: 0; visibility: hidden; }
-.loader-text { font-family: var(--font-it); font-size: 2rem; letter-spacing: 8px; color: var(--crema); }
-.loader-bar { width: 200px; height: 1px; background: rgba(255,255,255,0.1); }
-.loader-fill { height: 100%; background: var(--dorado); width: 0; animation: loadFill 1.5s ease forwards; }
-@keyframes loadFill { to { width: 100%; } }
+  <!-- COLECCIÓN -->
+  <section class="section" id="coleccion">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// CATÁLOGO</div>
+      <h2>COLECCIÓN</h2>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
 
-/* ===== NAVBAR ===== */
-.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 3rem; transition: all 0.4s; }
-.navbar.scrolled { background: rgba(10,10,10,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-d); }
-.nav-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
-.nav-logo { font-family: var(--font-it); font-size: 1.4rem; color: var(--crema); text-decoration: none; letter-spacing: 4px; }
-.nav-logo span { color: var(--dorado); }
-.nav-links { display: flex; list-style: none; gap: 2.5rem; }
-.nav-link { color: rgba(245,240,232,0.6); text-decoration: none; font-family: var(--font-j); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; transition: color 0.3s; }
-.nav-link:hover, .nav-link.active { color: var(--dorado); }
-.btn-nav { font-family: var(--font-j); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--negro); background: var(--dorado); padding: 0.7rem 1.6rem; text-decoration: none; font-weight: 500; transition: all 0.3s; }
-.btn-nav:hover { background: var(--dorado2); transform: translateY(-1px); }
-.hamburger { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
-.hamburger span { width: 22px; height: 1px; background: var(--crema); display: block; transition: all 0.3s; }
-.nav-mobile { display: none; flex-direction: column; gap: 1.5rem; padding: 2rem 3rem; background: var(--negro2); border-top: 1px solid var(--border-d); }
-.nav-mobile.open { display: flex; }
-.nav-mobile .nav-link { font-size: 1rem; letter-spacing: 3px; }
+  <!-- PEDIDOS -->
+  <section class="section-dark" id="pedidos">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// PROCESO</div>
+      <h2>CÓMO PEDÍS</h2>
+    </div>
+    <div class="steps-row reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h4>Elegí la prenda</h4>
+          <p>Revisá el catálogo, elegí modelo, talle y color.</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h4>Completá el form</h4>
+          <p>Nombre, prenda, talle. Directo y sin vueltas.</p>
+        </div>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h4>Lo coordinamos</h4>
+          <p>Confirmamos por WhatsApp y te lo mandamos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrap reveal">
+      <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU%20🖤" class="btn btn-primary" target="_blank">Escribir por WhatsApp</a>
+      <div class="order-form">
+        <div class="form-title">FORMULARIO DE PEDIDO</div>
+        <input type="text" id="fname" placeholder="Tu nombre *" />
+        <select id="fprenda">
+          <option value="">Elegí una prenda...</option>
+          <option>Remera Oversize</option>
+          <option>Buzo Hoodie</option>
+          <option>Pantalón Cargo</option>
+          <option>Jogger Técnico</option>
+          <option>Set Completo (Buzo + Pantalón)</option>
+          <option>Cap Haku</option>
+        </select>
+        <div class="talle-group">
+          <label>TALLE</label>
+          <div class="talles">
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">S</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">M</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">L</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">XL</button>
+            <button type="button" class="talle-btn" onclick="selectTalle(this)">XXL</button>
+          </div>
+        </div>
+        <input type="text" id="fcolor" placeholder="Color preferido" />
+        <textarea id="fnota" placeholder="Nota adicional (opcional)"></textarea>
+        <button type="button" class="btn btn-primary w100" onclick="sendOrder()">Enviar por WhatsApp</button>
+      </div>
+    </div>
+  </section>
 
-/* ===== HERO ===== */
-.hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: flex-end; overflow: hidden; }
-.hero-media { position: absolute; inset: 0; }
-.hero-img { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.3) 100%); }
-.hero-content { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; width: 100%; padding: 0 3rem 6rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; }
-.hero-eyebrow { font-family: var(--font-j); font-size: 0.72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--dorado); font-weight: 300; margin-bottom: 1.5rem; }
-.hero-title { font-family: var(--font-cor); font-size: clamp(4rem, 7vw, 7rem); line-height: 1; color: var(--crema); font-weight: 300; margin-bottom: 2rem; }
-.hero-title em { font-style: italic; color: var(--dorado); }
-.hero-desc { font-size: 0.95rem; color: rgba(245,240,232,0.65); max-width: 400px; line-height: 1.9; margin-bottom: 2.5rem; font-weight: 300; }
-.btn-hero { display: inline-block; font-family: var(--font-j); font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; color: var(--crema); border: 1px solid rgba(245,240,232,0.4); padding: 1rem 2.5rem; text-decoration: none; font-weight: 300; transition: all 0.4s; position: relative; overflow: hidden; }
-.btn-hero::before { content: ''; position: absolute; inset: 0; background: var(--dorado); transform: translateX(-100%); transition: transform 0.4s; z-index: -1; }
-.btn-hero:hover { color: var(--negro); border-color: var(--dorado); }
-.btn-hero:hover::before { transform: translateX(0); }
-.hero-pill { background: rgba(245,240,232,0.06); border: 1px solid var(--border-d); backdrop-filter: blur(20px); padding: 2rem; min-width: 280px; flex-shrink: 0; }
-.pill-top { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-d); }
-.pill-icon { color: var(--dorado); font-size: 1rem; }
-.pill-label { font-family: var(--font-it); font-size: 1rem; letter-spacing: 3px; color: var(--crema); }
-.pill-stat { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-d); }
-.ps { display: flex; flex-direction: column; }
-.ps-n { font-family: var(--font-cor); font-size: 1.8rem; color: var(--dorado); line-height: 1; }
-.ps-l { font-size: 0.65rem; color: rgba(245,240,232,0.5); letter-spacing: 1px; text-transform: uppercase; margin-top: 0.2rem; }
-.ps-div { width: 1px; height: 40px; background: var(--border-d); }
-.pill-bottom { display: flex; flex-direction: column; gap: 0.3rem; }
-.pill-bottom span { font-size: 0.78rem; color: rgba(245,240,232,0.6); font-weight: 300; letter-spacing: 1px; }
-.hero-scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; z-index: 1; }
-.scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--dorado)); animation: scrollLine 2s ease-in-out infinite; }
-@keyframes scrollLine { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
-.hero-scroll span { font-family: var(--font-j); font-size: 0.6rem; letter-spacing: 4px; color: rgba(245,240,232,0.4); text-transform: uppercase; writing-mode: vertical-rl; }
+  <!-- TESTIMONIOS -->
+  <section class="section" id="testimonios">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// REVIEWS</div>
+      <h2>LO QUE DICEN</h2>
+    </div>
+    <div class="testimonios-grid reveal" id="testimoniosGrid"></div>
+  </section>
 
-/* ===== MARQUEE ===== */
-.marquee-wrap { background: var(--negro); overflow: hidden; height: 52px; display: flex; align-items: center; border-top: 1px solid var(--border-d); border-bottom: 1px solid var(--border-d); }
-.marquee { display: flex; gap: 3rem; white-space: nowrap; animation: marquee 25s linear infinite; font-family: var(--font-j); font-size: 0.7rem; font-weight: 300; color: rgba(245,240,232,0.5); letter-spacing: 4px; text-transform: uppercase; }
-.mdot { color: var(--dorado); }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  <!-- NOSOTROS -->
+  <section class="section-dark manifesto" id="nosotros">
+    <div class="manifesto-inner reveal">
+      <div class="manifesto-tag">// QUIÉNES SOMOS</div>
+      <h2 class="manifesto-title">HAKU<br>NO ES<br>UNA MARCA.</h2>
+      <p class="manifesto-body">Es una actitud. Nacimos en Buenos Aires con una sola obsesión: que la ropa que usás diga algo antes de que abras la boca. Sin logos gigantes ni tendencias prestadas. Solo corte, calidad y flow.</p>
+      <div class="manifesto-pills">
+        <span>Oversize real</span>
+        <span>Sin relleno</span>
+        <span>Hecho para durar</span>
+        <span>BA, Argentina</span>
+        <span>Cultura urbana</span>
+      </div>
+    </div>
+  </section>
 
-/* ===== FILOSOFÍA ===== */
-.filosofia { background: var(--crema); padding: 8rem 3rem; }
-.filosofia-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-.filosofia-img { position: relative; }
-.filosofia-img img { width: 100%; height: 600px; object-fit: cover; }
-.filosofia-tag { position: absolute; bottom: -1px; right: -1px; background: var(--negro); color: var(--crema); padding: 1.5rem 2rem; font-family: var(--font-j); font-size: 0.78rem; letter-spacing: 2px; text-align: center; }
-.filosofia-tag span { display: block; font-family: var(--font-cor); font-size: 3rem; color: var(--dorado); line-height: 1; margin-bottom: 0.3rem; }
-.eyebrow { display: block; font-family: var(--font-j); font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--dorado); font-weight: 400; margin-bottom: 1.2rem; }
-.eyebrow.light { color: var(--dorado2); }
-.filosofia-content h2 { font-family: var(--font-cor); font-size: clamp(2.5rem, 4vw, 3.8rem); line-height: 1.15; color: var(--negro); font-weight: 300; margin-bottom: 1.5rem; }
-.filosofia-content h2 em { font-style: italic; color: var(--dorado); }
-.filosofia-sep { width: 60px; height: 1px; background: var(--dorado); margin-bottom: 2rem; }
-.filosofia-content p { font-size: 0.92rem; color: #555; line-height: 1.9; margin-bottom: 1rem; font-weight: 300; }
-.filosofia-items { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
-.fi { display: flex; gap: 1.2rem; align-items: flex-start; }
-.fi-icon { color: var(--dorado); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
-.fi strong { display: block; font-size: 0.88rem; color: var(--negro); font-weight: 500; margin-bottom: 0.2rem; letter-spacing: 0.5px; }
-.fi p { font-size: 0.82rem; color: #777; margin: 0; font-weight: 300; }
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">// CONTACTO</div>
+      <h2>HABLEMOS</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <a href="https://wa.me/541156584277" class="contact-card" target="_blank">
+        <div class="contact-icon">WA</div>
+        <h4>WhatsApp</h4>
+        <p>+54 11 5658-4277</p>
+        <span class="contact-link">Escribir ahora →</span>
+      </a>
+      <div class="contact-card">
+        <div class="contact-icon">📦</div>
+        <h4>Envíos</h4>
+        <p>Todo el país</p>
+        <span class="contact-link">Lo coordinamos</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🕐</div>
+        <h4>Horarios</h4>
+        <p>Lun–Sáb 10 a 21hs</p>
+        <span class="contact-link">Respondemos rápido</span>
+      </div>
+      <a href="https://www.instagram.com/deli.kush/" class="contact-card" target="_blank">
+        <div class="contact-icon">IG</div>
+        <h4>Instagram</h4>
+        <p>@deli.kush</p>
+        <span class="contact-link">Seguinos →</span>
+      </a>
+    </div>
+  </section>
 
-/* ===== SERVICIOS ===== */
-.servicios { background: var(--negro); padding: 8rem 3rem; }
-.servicios-header { max-width: 1300px; margin: 0 auto 4rem; }
-.servicios-header h2 { font-family: var(--font-cor); font-size: clamp(2.5rem, 4vw, 3.8rem); line-height: 1.15; font-weight: 300; margin-bottom: 0; }
-.servicios-header h2.light { color: var(--crema); }
-.servicios-header h2 em { font-style: italic; color: var(--dorado); }
-.servicios-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border-d); }
-.servicio { padding: 3rem; border-right: 1px solid var(--border-d); border-bottom: 1px solid var(--border-d); position: relative; transition: background 0.4s; }
-.servicio:nth-child(3n) { border-right: none; }
-.servicio:nth-child(4), .servicio:nth-child(5), .servicio:nth-child(6) { border-bottom: none; }
-.servicio:hover { background: rgba(201,168,76,0.05); }
-.servicio-num { font-family: var(--font-cor); font-size: 0.85rem; color: var(--dorado); letter-spacing: 2px; margin-bottom: 1.5rem; font-weight: 300; opacity: 0.7; }
-.servicio-icon { font-size: 2rem; margin-bottom: 1.2rem; display: block; }
-.servicio h3 { font-family: var(--font-cor); font-size: 1.4rem; color: var(--crema); font-weight: 400; margin-bottom: 1rem; }
-.servicio p { font-size: 0.83rem; color: rgba(245,240,232,0.5); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
-.servicio-cta { font-family: var(--font-j); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--dorado); text-decoration: none; font-weight: 400; transition: letter-spacing 0.3s; }
-.servicio-cta:hover { letter-spacing: 4px; }
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">HAKU<span>.</span></div>
+      <p>Streetwear para los que se mueven diferente.</p>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#coleccion">Colección</a>
+        <a href="#pedidos">Pedidos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <p class="footer-copy">© 2026 <strong>HAKU</strong> · Buenos Aires, Argentina</p>
+    </div>
+  </footer>
 
-/* ===== TURNO ===== */
-.turno { background: var(--crema2); padding: 8rem 3rem; border-top: 1px solid rgba(0,0,0,0.08); }
-.turno-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: start; }
-.turno-left h2 { font-family: var(--font-cor); font-size: clamp(2.5rem, 4vw, 3.8rem); line-height: 1.15; color: var(--negro); font-weight: 300; margin-bottom: 1rem; }
-.turno-left h2 em { font-style: italic; color: var(--dorado); }
-.turno-sep { width: 60px; height: 1px; background: var(--dorado); margin: 1.5rem 0; }
-.turno-left > p { font-size: 0.9rem; color: #666; line-height: 1.8; margin-bottom: 2rem; font-weight: 300; }
-.turno-contacts { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
-.tc { display: flex; gap: 1rem; align-items: center; text-decoration: none; padding: 1.2rem 1.5rem; background: white; border: 1px solid rgba(0,0,0,0.08); transition: all 0.3s; }
-.tc:hover { border-color: var(--dorado); transform: translateX(4px); }
-.tc-icon { font-size: 1.3rem; flex-shrink: 0; }
-.tc strong { display: block; font-size: 0.88rem; color: var(--negro); font-weight: 500; margin-bottom: 0.2rem; }
-.tc p { font-size: 0.78rem; color: #777; margin: 0; font-weight: 300; }
-.obras-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.obras-grid span { font-family: var(--font-j); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); border: 1px solid rgba(0,0,0,0.1); padding: 0.35rem 0.8rem; font-weight: 300; }
-.turno-form { background: var(--negro); padding: 3rem; }
-.form-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-d); }
-.form-header h3 { font-family: var(--font-cor); font-size: 1.5rem; color: var(--crema); font-weight: 400; }
-.form-header span { color: var(--dorado); }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.turno-form input, .turno-form select, .turno-form textarea { width: 100%; background: rgba(245,240,232,0.05); border: 1px solid var(--border-d); color: var(--crema); padding: 1rem 1.2rem; font-family: var(--font-j); font-size: 0.85rem; font-weight: 300; margin-bottom: 1rem; outline: none; transition: border-color 0.3s; }
-.turno-form input::placeholder, .turno-form textarea::placeholder { color: rgba(245,240,232,0.3); }
-.turno-form input:focus, .turno-form select:focus, .turno-form textarea:focus { border-color: var(--dorado); background: rgba(201,168,76,0.05); }
-.turno-form select option { background: var(--negro2); color: var(--crema); }
-.turno-form textarea { height: 100px; resize: vertical; }
-.btn-form { width: 100%; background: var(--dorado); color: var(--negro); padding: 1.1rem; font-family: var(--font-j); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; border: none; cursor: pointer; font-weight: 500; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.8rem; }
-.btn-form:hover { background: var(--dorado2); transform: translateY(-1px); }
-.form-note { text-align: center; font-size: 0.75rem; color: rgba(245,240,232,0.35); margin-top: 1rem; letter-spacing: 1px; font-weight: 300; }
+  <!-- CARRITO -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>TU BAG</h3>
+      <button onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">TOTAL <span id="cartTotal">$0</span></div>
+      <button class="btn btn-primary w100" onclick="checkoutCart()">Enviar por WhatsApp</button>
+    </div>
+  </div>
 
-/* ===== UBICACIÓN ===== */
-.ubicacion { background: var(--crema); padding: 8rem 3rem; border-top: 1px solid rgba(0,0,0,0.06); }
-.ubicacion-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
-.ubicacion-info h2 { font-family: var(--font-cor); font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.2; color: var(--negro); font-weight: 300; margin-bottom: 2rem; }
-.ubicacion-info h2 em { font-style: italic; color: var(--dorado); }
-.ubi-items { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; }
-.ubi-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-.ubi-item span { font-size: 1.3rem; flex-shrink: 0; }
-.ubi-item strong { display: block; font-size: 0.88rem; color: var(--negro); font-weight: 500; margin-bottom: 0.3rem; }
-.ubi-item p { font-size: 0.83rem; color: #666; line-height: 1.6; font-weight: 300; }
-.btn-mapa { display: inline-block; font-family: var(--font-j); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--negro); border: 1px solid rgba(0,0,0,0.2); padding: 0.9rem 2rem; text-decoration: none; font-weight: 400; transition: all 0.3s; }
-.btn-mapa:hover { background: var(--negro); color: var(--crema); border-color: var(--negro); }
-.mapa { height: 500px; overflow: hidden; }
-.mapa iframe { width: 100%; height: 100%; border: 0; filter: grayscale(20%) contrast(1.1); }
+  <!-- WA FLOTANTE -->
+  <a href="https://wa.me/541156584277?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20HAKU" class="wa-float" target="_blank">
+    <span class="wa-tooltip">¡Pedí ahora!</span>
+    💬
+  </a>
 
-/* ===== FOOTER ===== */
-.footer { background: var(--negro); border-top: 1px solid var(--border-d); }
-.footer-top { max-width: 1300px; margin: 0 auto; padding: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-d); }
-.footer-logo { font-family: var(--font-it); font-size: 1.3rem; letter-spacing: 4px; color: var(--crema); }
-.footer-logo span { color: var(--dorado); }
-.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-.footer-links a { font-family: var(--font-j); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(245,240,232,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
-.footer-links a:hover { color: var(--dorado); }
-.footer-wa { font-family: var(--font-j); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; background: #25d366; color: white; padding: 0.7rem 1.5rem; text-decoration: none; font-weight: 500; transition: all 0.3s; }
-.footer-wa:hover { background: #1da851; }
-.footer-bottom { max-width: 1300px; margin: 0 auto; padding: 1.5rem 3rem; display: flex; justify-content: space-between; }
-.footer-bottom p { font-size: 0.72rem; color: rgba(245,240,232,0.2); font-weight: 300; letter-spacing: 0.5px; }
-
-/* ===== WA FLOTANTE ===== */
-.wa-float { position: fixed; bottom: 2.5rem; right: 2.5rem; z-index: 999; background: #25d366; color: white; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 8px 25px rgba(37,211,102,0.4); transition: transform 0.3s; animation: waPulse 3s ease-in-out infinite; }
-.wa-float:hover { transform: scale(1.08); }
-.wa-tip { position: absolute; right: 68px; background: var(--negro2); color: var(--crema); padding: 0.4rem 1rem; font-family: var(--font-j); font-size: 0.72rem; letter-spacing: 1px; white-space: nowrap; opacity: 0; transition: opacity 0.3s; border: 1px solid var(--border-d); }
-.wa-float:hover .wa-tip { opacity: 1; }
-@keyframes waPulse { 0%,100% { box-shadow: 0 8px 25px rgba(37,211,102,0.4); } 50% { box-shadow: 0 8px 40px rgba(37,211,102,0.7); } }
-
-/* ===== REVEAL ===== */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-  .servicio:nth-child(3n) { border-right: 1px solid var(--border-d); }
-  .servicio:nth-child(2n) { border-right: none; }
-  .servicio:nth-child(5), .servicio:nth-child(6) { border-bottom: none; }
-  .servicio:nth-child(4) { border-bottom: 1px solid var(--border-d); }
-}
-@media (max-width: 900px) {
-  .filosofia-inner, .turno-inner, .ubicacion-inner { grid-template-columns: 1fr; }
-  .form-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .nav-links, .btn-nav { display: none; }
-  .hamburger { display: flex; }
-  .hero-content { flex-direction: column; padding: 0 1.5rem 4rem; }
-  .hero-pill { width: 100%; }
-  .navbar { padding: 0 1.5rem; }
-  .filosofia, .servicios, .turno, .ubicacion { padding: 5rem 1.5rem; }
-  .servicios-grid { grid-template-columns: 1fr; }
-  .servicio { border-right: none !important; }
-  .footer-top { flex-direction: column; padding: 2rem 1.5rem; }
-  .footer-bottom { flex-direction: column; gap: 0.5rem; padding: 1.5rem; }
-}
+  <div id="confettiContainer"></div>
+  <script src="main.js"></script>
+</body>
+</html>
